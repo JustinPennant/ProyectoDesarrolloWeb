@@ -1,0 +1,34 @@
+/* Contenedor Principal */
+.container {
+    margin: 20px;
+}
+
+/* Para Títulos Generales */
+h2 {
+    text-align: center;
+}
+
+/* Para Títulos Secundarios */
+h3 {
+    color: midnightblue;
+}
+
+/* Para el texto en general */
+p {
+    text-align: justify;
+}
+
+/* Imagenes que se muestren junto al textos */
+.imagenedit{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+/* Textos que se muestren junto a imagenes */
+.textodiv{
+    display: inline-block;
+    height: 15%;
+    width: 80%;
+}
