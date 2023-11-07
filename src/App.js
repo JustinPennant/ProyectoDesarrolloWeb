@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// Para agregar animaciones
+import 'animate.css';
+import 'animate.css/animate.min.css';
 // Para el Menu que movilizará entre paginas
 import Menu from './Componentes/Menu';
 // Para cada una de las páginas y mostrar su contenido
@@ -25,16 +28,26 @@ function App() {
     setCurrentPage(pageName);
   };
 
+  useEffect(() => {
+    document.body.classList.add('animate__animated', 'animate__fadeIn');
+    const timer = setTimeout(() => {
+      document.body.classList.remove('animate__animated', 'animate__fadeIn');
+    }, 1000); // Ajusta el tiempo según la duración de tu animación
+    return () => clearTimeout(timer);
+  }, [currentPage]);
+
   return (
     <div>
       {/* Llamado al Componente de Menu */}
       <Menu changePage={changePage} />
+      {/* Listado de todas las páginas a visitar */}
       <div className="content">
-        {/* Listado de todas las páginas a visitar */}
-        {currentPage === 'Inicio' && <Inicio ImagenPerfil={FotoPerfil} ImagenProyecto={FotoProyect} ImagenContacto={FotoContact}/>}
+        {currentPage === 'Inicio' && <Inicio ImagenPerfil={FotoPerfil} ImagenProyecto={FotoProyect} ImagenContacto={FotoContact} />}
         {currentPage === 'SobreMi' && <SobreMi />}
         {currentPage === 'Proyectos' && <Proyectos />}
-        {currentPage === 'Contacto' && <Contacto linkedinIcon={FotoLinke} twitterIcon={FotoTwitter} instagramIcon={FotoInsta} githubIcon={FotoGithub}/>}
+        {currentPage === 'Contacto' && (
+          <Contacto linkedinIcon={FotoLinke} twitterIcon={FotoTwitter} instagramIcon={FotoInsta} githubIcon={FotoGithub} />
+        )}
       </div>
     </div>
   );

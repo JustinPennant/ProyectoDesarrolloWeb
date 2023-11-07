@@ -5,7 +5,7 @@ import './CSSPaginas.css';
 function Inicio({ImagenPerfil, ImagenProyecto, ImagenContacto}) {
   return (
     <div className="container">
-      <h2>¡Bienvenido a mi Web Personal!</h2>
+      <h2 class="animate__fadeInUp">¡Bienvenido a mi Web Personal!</h2>
       <p>¡Hola! Gracias por tomarte el tiempo de ver mi página web.</p>
 
       {/* Contenido de "Sobre Mi" */}

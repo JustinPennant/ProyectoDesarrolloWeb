@@ -5,7 +5,7 @@ import './CSSPaginas.css';
 function SobreMi() {
   return (
     <div className="container">
-      <h2>Sobre Mí</h2>
+      <h2 class="animate__fadeInUp">Sobre Mí</h2>
       <p>Mi nombre completo es Justin Emmanuel Ramos Pennant, mi centro de estudios actual es la Universidad Mariano Galvez de Guatemala,
         siendo mi estudio en Ingeniería en Sistemas y Ciencias de la Computación. Actualmente planeo especializarme en el ambito de la
         Seguridad de Sistemas, aunque no me encuentro cerrado a otras especialidades, en especifico en el mantenimiento de páginas web,

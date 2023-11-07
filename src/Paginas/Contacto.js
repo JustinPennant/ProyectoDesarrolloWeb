@@ -1,43 +1,12 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 // Importación de CSS e Imagenes
 import './CSSPaginas.css';
 
 function Contacto({ linkedinIcon, twitterIcon, instagramIcon, githubIcon }) {
-  // Define estados para los campos del formulario
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensaje, setMensaje] = useState('');
-
-  // Función para manejar el envío del formulario
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Crea un objeto con los datos del formulario
-    const formData = {
-      Nombre: nombre,
-      Email: email,
-      Mensaje: mensaje,
-    };
-
-    try {
-      // Realiza una solicitud POST al servidor para enviar el formulario
-      const response = await axios.post('http://localhost:3000/enviar-mensaje', formData);
-
-      // Muestra un mensaje de confirmación al usuario
-      alert('Mensaje enviado con éxito');
-    } catch (error) {
-      console.error(error);
-
-      // Muestra un mensaje de error al usuario
-      alert('Error al enviar el mensaje');
-    }
-  };
-
   return (
     <div className="container">
-      <h2>Contacto</h2>
+      <h2 class="animate__fadeInUp">Contacto</h2>
 
       {/* Contenido de "Contacto" */}
       <p>Puedes contactar conmigo en diferentes medios: </p>
@@ -68,43 +37,6 @@ function Contacto({ linkedinIcon, twitterIcon, instagramIcon, githubIcon }) {
           <a href="https://github.com/JustinPennant">GitHub</a>
         </li>
       </ul>
-
-      {/* Formulario de contacto */}
-      <h3>¡Envía un Mensaje!</h3>
-      <div style={{ margin: "20px", padding: "10px", border: "2px solid #007BFF", backgroundColor: "#f0f0f0" }}>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Correo Electrónico:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="mensaje">Mensaje:</label>
-            <textarea
-              id="mensaje"
-              value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Enviar Mensaje</button>
-        </form>
-      </div>
     </div>
   );
 }

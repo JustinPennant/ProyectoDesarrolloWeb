@@ -6,16 +6,24 @@
 /* Para Títulos Generales */
 h2 {
     text-align: center;
+    color: blueviolet;
+    animation: animate__animated animate__slideInRight animate__slower;
+  }
+
+/* Para las animaciones */  
+h2.animate__fadeInUp {
+    animation-duration: 1s;
 }
 
 /* Para Títulos Secundarios */
 h3 {
-    color: midnightblue;
+    color: purple;
 }
 
 /* Para el texto en general */
 p {
     text-align: justify;
+    color: white;
 }
 
 /* Imagenes que se muestren junto al textos */

@@ -5,7 +5,7 @@ import './CSSPaginas.css';
 function Proyectos() {
   return (
     <div className="container">
-      <h2>Mis Proyectos</h2>
+      <h2 class="animate__fadeInUp">Mis Proyectos</h2>
 
       {/* Contenido de "Proyectos" */}
       <div className="proyecto">
